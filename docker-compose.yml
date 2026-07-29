@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  iot-app:
+    build: .
+    image: iot-cicd-demo:local
+    ports:
+      - "5000:5000"
+    environment:
+      - MQTT_ENABLED=true
+      - MQTT_BROKER=mosquitto
+      - MQTT_PORT=1883
+      - MQTT_TOPIC=iot/sensors
+      - PUBLISH_INTERVAL=5
+      - DEVICE_ID=sensor-sim-01
+    depends_on:
+      - mosquitto
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
