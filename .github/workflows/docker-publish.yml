@@ -34,5 +34,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/iot-cicd-demo:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/iot-cicd-demo:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/iot-app-pipeline:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/iot-app-pipeline:${{ github.sha }}
