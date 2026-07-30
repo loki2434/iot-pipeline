@@ -7,7 +7,7 @@ built/tested/pushed to Docker Hub automatically via GitHub Actions.
 
 ## Endpoints
 
-| Route      | Description                                      |
+| Route      | Description                                       |
 |------------|---------------------------------------------------|
 | `/health`  | Liveness check, returns `{"status": "ok"}`         |
 | `/data`    | Latest simulated sensor reading (JSON)             |
